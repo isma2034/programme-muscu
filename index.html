@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#13307a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Muscu">
+<title>Programme muscu</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top"><div class="wrap" id="top"><h1>Programme muscu</h1></div></header>
+<main class="wrap">
+  <section class="view" id="v-seance"></section>
+  <section class="view" id="v-exos"></section>
+  <section class="view" id="v-progres"></section>
+  <section class="view" id="v-poids"></section>
+  <section class="view" id="v-plus"></section>
+  <noscript><p>Cette app a besoin de JavaScript.</p></noscript>
+</main>
+
+<div class="timer" id="timer" role="timer" aria-live="polite">
+  <svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle id="tring" cx="30" cy="30" r="26" fill="none" stroke="#e23b2e" stroke-width="6" stroke-linecap="round" transform="rotate(-90 30 30)" stroke-dasharray="163.4" stroke-dashoffset="0"/></svg>
+  <div style="flex:1"><div class="t" id="tt">2:00</div><div class="l" id="tl">Repos</div></div>
+  <button id="tminus" aria-label="Moins 15 secondes">−15</button><button id="tplus" aria-label="Plus 15 secondes">+15</button><button id="tstop" aria-label="Arrêter">✕</button>
+</div>
+
+<nav class="tabs" id="tabs">
+  <a href="#seance"><svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg>Séance</a>
+  <a href="#exos"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg>Exercices</a>
+  <a href="#progres"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l4-5 3 3 5-7"/></svg>Progrès</a>
+  <a href="#poids"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 10a3 3 0 0 1 6 0M12 10l1.5-2"/></svg>Poids</a>
+  <a href="#plus"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>Plus</a>
+</nav>
+<div class="sheet" id="sheet"><div id="sheetIn" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
